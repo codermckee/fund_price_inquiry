@@ -1,4 +1,4 @@
-# -*- coding: cp936 -*-
+# -*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
 def url_fund(code):
@@ -9,45 +9,45 @@ def inquire_fund(fund_url):
     soup1 = BeautifulSoup(res.text)
     predict_date = soup1.select('#gz_gztime')
     predict_price = soup1.select('#gz_gsz')
-    print '¾»Öµ¹À¼Æ:',predict_date[0].text,predict_price[0].text
+    print 'å‡€å€¼ä¼°è®¡:',predict_date[0].text,predict_price[0].text
     for i in soup1.select('#Li1 tr'):
         print i.text.strip()
     print '\n'
-   
-try:
-    print '³¤ ĞÅ Á¿ »¯ ÏÈ ·æ--519983(³Ö²Ö)£¤£¤1.5830'
-    inquire_fund(url_fund('519983'))
-    print '¸» ¹ú ÖĞ Ö¤ ¾ü ¹¤--161024(³Ö²Ö)£¤£¤0.92'
-    inquire_fund(url_fund('161024'))
-    print 'ÈÚ Í¨ Éî Ö¤ 100--161604(³Ö²Ö)£¤£¤1.813//£¤£¤1.2030'
-    inquire_fund(url_fund('161604'))
-    print 'ÈÚ Í¨ ĞÂ À¶ ³ï--161601(³Ö²Ö)£¤£¤0.68'
-    inquire_fund(url_fund('161601'))    
-    print 'ÄÏ ·½ ²ß ÂÔ ÓÅ »¯ »ì ºÏ--202019'
-    inquire_fund(url_fund('202019'))
-    print 'ĞË È« ÓĞ »ú Ôö ³¤--340008'
-    inquire_fund(url_fund('340008'))
-    print '¸» ¹ú Ìì Èğ--100022(³Ö²Ö)£¤£¤0.9-1.0'
-    inquire_fund(url_fund('100022'))
-    print 'ÖĞ Òø Ôö ³¤--163803(³Ö²Ö)£¤£¤0.533'
-    inquire_fund(url_fund('163803'))
-    print 'ÄÏ ·½ ³É ·Ö ¾« Ñ¡--202005(³Ö²Ö)£¤£¤0.8-1.4'
-    inquire_fund(url_fund('202005'))
-    print 'ÕĞ ÉÌ ÏÈ ·æ--217005(³Ö²Ö)£¤£¤1.0145'
-    inquire_fund(url_fund('217005'))
-    print 'ÉÏ Í¶ Ä¦ ¸ù--377016(³Ö²Ö)£¤£¤0.81456'
-    inquire_fund(url_fund('377016'))
-    print '°× ¾Æ--161725'
-    inquire_fund(url_fund('161725'))
-    print 'Ô­ ÓÍ--501018'
-    inquire_fund(url_fund('501018'))
-except:
-    print '''     -----------------
-    ÍøÂç²»ÎÈ¶¨£¬ÇëÖØĞÂÊÔÒ»´Î!
-    -----------------------'''
 
-cunjinbao_url = requests.get('https://cjb.alipay.com/gold/guide.htm;jsessionid=B68B29987841CF87D2A56E1A94EA30B7')
-soup_cunjinbao = BeautifulSoup(cunjinbao_url.text)
-gold_price = soup_cunjinbao.select('.ft-56')
-date = soup_cunjinbao.select('.date') 
-print date[0].text,gold_price[0].text.strip()
+if __name__ == '__main__':
+    try:
+        print 'é•¿ ä¿¡ é‡ åŒ– å…ˆ é”‹--519983(æŒä»“)ï¿¥ï¿¥1.5830'
+        inquire_fund(url_fund('519983'))
+        print 'å¯Œ å›½ ä¸­ è¯ å†› å·¥--161024(æŒä»“)ï¿¥ï¿¥0.92'
+        inquire_fund(url_fund('161024'))
+        print 'è é€š æ·± è¯ 100--161604(æŒä»“)ï¿¥ï¿¥1.813//ï¿¥ï¿¥1.2030'
+        inquire_fund(url_fund('161604'))
+        print 'è é€š æ–° è“ ç­¹--161601(æŒä»“)ï¿¥ï¿¥0.68'
+        inquire_fund(url_fund('161601'))
+        print 'å— æ–¹ ç­– ç•¥ ä¼˜ åŒ– æ·· åˆ--202019'
+        inquire_fund(url_fund('202019'))
+        print 'å…´ å…¨ æœ‰ æœº å¢ é•¿--340008'
+        inquire_fund(url_fund('340008'))
+        print 'å¯Œ å›½ å¤© ç‘--100022(æŒä»“)ï¿¥ï¿¥0.9-1.0'
+        inquire_fund(url_fund('100022'))
+        print 'ä¸­ é“¶ å¢ é•¿--163803(æŒä»“)ï¿¥ï¿¥0.533'
+        inquire_fund(url_fund('163803'))
+        print 'å— æ–¹ æˆ åˆ† ç²¾ é€‰--202005(æŒä»“)ï¿¥ï¿¥0.8-1.4'
+        inquire_fund(url_fund('202005'))
+        print 'æ‹› å•† å…ˆ é”‹--217005(æŒä»“)ï¿¥ï¿¥1.0145'
+        inquire_fund(url_fund('217005'))
+        print 'ä¸Š æŠ• æ‘© æ ¹--377016(æŒä»“)ï¿¥ï¿¥0.81456'
+        inquire_fund(url_fund('377016'))
+        print 'ç™½ é…’--161725'
+        inquire_fund(url_fund('161725'))
+        print 'åŸ æ²¹--501018'
+        inquire_fund(url_fund('501018'))
+    except:
+        print '''     -----------------
+        ç½‘ç»œä¸ç¨³å®šï¼Œè¯·é‡æ–°è¯•ä¸€æ¬¡!
+        -----------------------'''
+    cunjinbao_url = requests.get('https://cjb.alipay.com/gold/guide.htm;jsessionid=B68B29987841CF87D2A56E1A94EA30B7')
+    soup_cunjinbao = BeautifulSoup(cunjinbao_url.text)
+    gold_price = soup_cunjinbao.select('.ft-56')
+    date = soup_cunjinbao.select('.date')
+    print date[0].text,gold_price[0].text.strip()
