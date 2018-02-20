@@ -95,7 +95,7 @@ if __name__ == '__main__':
         inquire_fund(url_fund('202005'))
         print '招 商 先 锋--217005(持仓)￥￥1.0145'
         inquire_fund(url_fund('217005'))
-        print '煤 炭--161724--￥￥1.1940(1.8k)--￥￥1.0920(3k)'
+        print '煤 炭--161724--￥￥1.1940(1.8k)--￥￥1.0920(3k)//相当于￥￥1.129(4.8K)'
         inquire_fund(url_fund('161724'))
         print '白 酒--161725--(1.11加仓)'
         inquire_fund(url_fund('161725'))
